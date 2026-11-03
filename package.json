@@ -1,0 +1,15 @@
+{
+  "name": "acme-shop",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A tiny demo shop API used as the target repo for DocDesk",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test test/"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
