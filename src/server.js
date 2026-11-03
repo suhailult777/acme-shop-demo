@@ -1,8 +1,9 @@
 // Entry point: starts the HTTP server.
+// PORT matches what most hosts (Render, Fly, Heroku) inject.
 const http = require("node:http");
 const { handle } = require("./app");
 
-const port = Number(process.env.SHOP_PORT || 3000);
+const port = Number(process.env.PORT || 3000);
 
 const server = http.createServer((req, res) => {
   handle(req, res).catch((err) => {
