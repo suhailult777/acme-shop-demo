@@ -26,16 +26,16 @@ async function handle(req, res) {
   const path = url.pathname;
 
   if (req.method === "GET" && path === "/health") return send(res, 200, { ok: true });
-  if (req.method === "GET" && path === "/api/v1/products") return send(res, 200, listProducts());
+  if (req.method === "GET" && path === "/api/products") return send(res, 200, listProducts());
 
-  const productMatch = path.match(/^\/api\/v1\/products\/([\w-]+)$/);
+  const productMatch = path.match(/^\/api\/products\/([\w-]+)$/);
   if (req.method === "GET" && productMatch) {
     const p = findProduct(productMatch[1]);
     return p ? send(res, 200, p) : send(res, 404, { error: "not found" });
   }
 
-  if (req.method === "GET" && path === "/api/v1/orders") return send(res, 200, listOrders());
-  if (req.method === "POST" && path === "/api/v1/orders") {
+  if (req.method === "GET" && path === "/api/orders") return send(res, 200, listOrders());
+  if (req.method === "POST" && path === "/api/checkout") {
     try {
       const body = await readJson(req);
       return send(res, 201, createOrder(body.items));
