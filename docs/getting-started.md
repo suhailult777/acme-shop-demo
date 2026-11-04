@@ -10,7 +10,7 @@ You need Node.js 20 or newer. There are no npm dependencies.
 To try an order:
 
 ```bash
-curl -X POST http://localhost:3000/api/v1/orders \
+curl -X POST http://localhost:3000/api/checkout \
   -H 'content-type: application/json' \
   -d '{"items":[{"productId":"tee-01","qty":2}]}'
 ```
