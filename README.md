@@ -8,13 +8,13 @@ team questions from these docs.
 
 ```bash
 npm install
-npm start
+npm run dev
 ```
 
-The server listens on port 3000. Set `SHOP_PORT` to use another port:
+The server listens on port 3000. Set `PORT` to use another port:
 
 ```bash
-SHOP_PORT=8080 npm start
+PORT=8080 npm run dev
 ```
 
 ## Docs
